@@ -1,0 +1,17 @@
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Application.deps.json
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Application.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Application.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Domain.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Infrastructure.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Domain.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/bin/Debug/net8.0/Infrastructure.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.csproj.CopyComplete
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/refint/Application.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/Application.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/Debug/net8.0/ref/Application.dll
