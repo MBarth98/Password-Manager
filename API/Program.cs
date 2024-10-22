@@ -37,14 +37,14 @@ internal class Program
             }
         );
         ibuilder = new IdentityBuilder(ibuilder.UserType, typeof(IdentityRole), builder.Services);
-        ibuilder
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+        ibuilder.AddEntityFrameworkStores<ApplicationDbContext>();
         //.AddDefaultTokenProviders();
 
         ibuilder.AddRoleValidator<RoleValidator<IdentityRole>>();
         ibuilder.AddRoleManager<RoleManager<IdentityRole>>();
         ibuilder.AddSignInManager<SignInManager<User>>();
-        ibuilder.AddUserManager<UserManager<User>>();                
+        ibuilder.AddUserManager<UserManager<User>>();               
+        
         // JWT Authentication Configuration
         var key = "very_secret_key_very_secret_key_very_secret_key"u8.ToArray();
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -74,18 +74,11 @@ internal class Program
                 };
             });
 
-// Authorization setup
-        builder.Services.AddAuthorization(options =>
-        {
-            options.AddPolicy("pol", policy =>
-            {
-                policy.Requirements.Add(new AuthorizationRequirement());
-            });
-        });
+        // Authorization setup
+        builder.Services.AddAuthorization();
         builder.Services.AddScoped<IAuthorizationHandler, Authorization>();
         builder.Services.AddHttpContextAccessor(); 
         
-        builder.Services.AddControllers();
 
         // Add services to the container.
         builder.Services.AddScoped<PasswordService>();
@@ -93,6 +86,8 @@ internal class Program
         builder.Services.AddScoped<IRepository<User>, UserRepository>();
         builder.Services.AddScoped<IRepository<Password>, PasswordRepository>();
 
+        builder.Services.AddControllers();
+        
         // Add CORS services
         builder.Services.AddCors(options =>
         {
@@ -111,7 +106,7 @@ internal class Program
         {
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
-                Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')",
+                Description = "JWT Authorization header using the Bearer scheme (Example: '12345abcdef')",
                 Name = "Authorization",
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,

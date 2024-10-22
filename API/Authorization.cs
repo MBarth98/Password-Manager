@@ -18,7 +18,6 @@ public class Authorization : AuthorizationHandler<AuthorizationRequirement>
         _dbContext = dbContext;
     }
     
-
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, AuthorizationRequirement requirement)
     {
         var userId = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;

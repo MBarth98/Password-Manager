@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj": {}
+    "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj": {
+    "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj",
+        "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj",
+        "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj",
         "packagesPath": "/home/mads/.nuget/packages/",
-        "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/obj/",
+        "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/mads/.nuget/NuGet/NuGet.Config"

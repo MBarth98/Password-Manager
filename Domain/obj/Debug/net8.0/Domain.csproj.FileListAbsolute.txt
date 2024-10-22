@@ -10,3 +10,16 @@
 /home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/obj/Debug/net8.0/refint/Domain.dll
 /home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/obj/Debug/net8.0/Domain.pdb
 /home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/obj/Debug/net8.0/ref/Domain.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/bin/Debug/net8.0/Domain.deps.json
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/bin/Debug/net8.0/Domain.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/bin/Debug/net8.0/Domain.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.pdb
+/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/ref/Domain.dll

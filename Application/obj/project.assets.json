@@ -1662,11 +1662,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/Application.csproj",
+      "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Application/Application.csproj",
       "projectName": "Application",
-      "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/Application.csproj",
+      "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Application/Application.csproj",
       "packagesPath": "/home/mads/.nuget/packages/",
-      "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Application/obj/",
+      "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mads/.nuget/NuGet/NuGet.Config"
@@ -1681,11 +1681,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj": {
-              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Domain/Domain.csproj"
+            "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj": {
+              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj"
             },
-            "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/SSD-Auth-Control/Infrastructure/Infrastructure.csproj"
+            "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj"
             }
           }
         }
