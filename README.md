@@ -25,7 +25,6 @@ This document outlines the security considerations, threat model, and limitation
 * Encryption at Rest: Passwords are encrypted server-side, ensuring that data remains secure in the event of database access. Two distinct algorithms are used: one for the master password and another for user-stored passwords. This segmentation minimizes the impact of a compromised encryption scheme for one type of data
 * Key Handling Currently, secure key management is not implemented, and keys may be stored in application memory or configuration files. For enhanced security, all encryption keys should eventually be stored and retrieved using a secure key management solution like HashiCorp Vault, AWS KMS, or Azure Key Vault
 * Authentication: Users authenticate using a master password, which is critical for deriving encryption keys. Authentication flow should be reviewed to ensure passwords are not transmitted in plaintext.
-* Access Control Access: to the backend must be tightly controlled, with user-specific credentials to segregate data access. Endpoint permissions should be reviewed to ensure role-based access control (RBAC) is implemented, even if minimally.
 * Network Security: Deployment on a closed network mitigates many external threats but is not foolproof. Use a reverse proxy (e.g., Nginx, Apache) to enforce TLS for all communications, ensuring encryption in transit. Firewall rules should restrict access to the backend to authorized IPs within the closed network.
 
 ## Pitfalls and Limitations in Security
