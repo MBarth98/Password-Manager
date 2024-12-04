@@ -3487,11 +3487,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/API/API.csproj",
+      "projectUniqueName": "/home/mads/Documents/code/Password-Manager/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/API/API.csproj",
+      "projectPath": "/home/mads/Documents/code/Password-Manager/API/API.csproj",
       "packagesPath": "/home/mads/.nuget/packages/",
-      "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/API/obj/",
+      "outputPath": "/home/mads/Documents/code/Password-Manager/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mads/.nuget/NuGet/NuGet.Config"
@@ -3506,11 +3506,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Application/Application.csproj": {
-              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Application/Application.csproj"
+            "/home/mads/Documents/code/Password-Manager/Application/Application.csproj": {
+              "projectPath": "/home/mads/Documents/code/Password-Manager/Application/Application.csproj"
             },
-            "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj"
+            "/home/mads/Documents/code/Password-Manager/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/home/mads/Documents/code/Password-Manager/Infrastructure/Infrastructure.csproj"
             }
           }
         }
@@ -3563,7 +3563,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

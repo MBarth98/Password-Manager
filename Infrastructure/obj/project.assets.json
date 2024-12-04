@@ -2580,11 +2580,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj",
+      "projectUniqueName": "/home/mads/Documents/code/Password-Manager/Infrastructure/Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/Infrastructure.csproj",
+      "projectPath": "/home/mads/Documents/code/Password-Manager/Infrastructure/Infrastructure.csproj",
       "packagesPath": "/home/mads/.nuget/packages/",
-      "outputPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Infrastructure/obj/",
+      "outputPath": "/home/mads/Documents/code/Password-Manager/Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mads/.nuget/NuGet/NuGet.Config"
@@ -2599,8 +2599,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj": {
-              "projectPath": "/home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/Domain.csproj"
+            "/home/mads/Documents/code/Password-Manager/Domain/Domain.csproj": {
+              "projectPath": "/home/mads/Documents/code/Password-Manager/Domain/Domain.csproj"
             }
           }
         }
@@ -2650,7 +2650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
