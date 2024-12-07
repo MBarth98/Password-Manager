@@ -23,3 +23,16 @@
 /home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/refint/Domain.dll
 /home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/Domain.pdb
 /home/mads/Downloads/SSD-Auth-Access-Control-main/PasswordManager/Domain/obj/Debug/net8.0/ref/Domain.dll
+/home/mads/Documents/code/Password-Manager/Domain/bin/Debug/net8.0/Domain.deps.json
+/home/mads/Documents/code/Password-Manager/Domain/bin/Debug/net8.0/Domain.dll
+/home/mads/Documents/code/Password-Manager/Domain/bin/Debug/net8.0/Domain.pdb
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.dll
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/Domain.pdb
+/home/mads/Documents/code/Password-Manager/Domain/obj/Debug/net8.0/ref/Domain.dll

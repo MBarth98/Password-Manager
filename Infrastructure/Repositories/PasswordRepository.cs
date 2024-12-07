@@ -1,45 +1,29 @@
-﻿using System.Linq.Expressions;
 using Domain;
+using Domain.Interfaces;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class PasswordRepository(ApplicationDbContext context) : IRepository<Password>
+public class PasswordRepository : IPasswordRepository
 {
-    public async Task<Password> GetByIdAsync(int id)
+    private readonly ApplicationDbContext _context;
+
+    public PasswordRepository(ApplicationDbContext context)
     {
-        return await context.Passwords
-            .FirstOrDefaultAsync(c => c.Id == id) ?? throw new Exception();
+        _context = context;
     }
 
-    public Task<IEnumerable<Password>> GetAllAsync()
+    public async Task AddPasswordAsync(PasswordEntry passwordEntry)
     {
-        throw new InvalidDataException();
+        _context.PasswordEntries.Add(passwordEntry);
+        await _context.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Password>> FindAsync(Expression<Func<Password, bool>> predicate)
+    public async Task<List<PasswordEntry>> GetPasswordsByUserIdAsync(int userId)
     {
-        return await context.Passwords
-            .Where(predicate)
+        return await _context.PasswordEntries
+            .Where(p => p.UserId == userId)
             .ToListAsync();
-    }
-    
-    public async Task<Password> AddAsync(Password entity)
-    {
-        context.Passwords.Add(entity);
-        await context.SaveChangesAsync();
-        return entity;
-    }
-
-    public void Remove(Password entity)
-    {
-        context.Passwords.Remove(entity);
-        context.SaveChanges();
-    }
-
-    public void Update(Password entity)
-    {
-        context.Passwords.Update(entity);
-        context.SaveChanges();
     }
 }

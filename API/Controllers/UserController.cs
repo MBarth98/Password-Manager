@@ -1,13 +1,9 @@
-﻿using Application;
+﻿
+
 using Application.DTOs;
-
-namespace API.Controllers;
-
-using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
+using Application.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Domain.Interfaces;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -15,40 +11,36 @@ public class UserController : ControllerBase
 {
     private readonly UserService _userService;
 
-    public UserController(UserService authenticationService)
+    public UserController(UserService userService)
     {
-        _userService = authenticationService;
+        _userService = userService;
     }
-    
-    [AllowAnonymous]
-    [HttpPost]
-    [Route("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterCreate create)
+
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] UserDto userDto)
     {
         try
         {
-            return Ok(await _userService.RegisterAsync(create));
+            await _userService.RegisterAsync(userDto);
+            return Ok();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            return BadRequest(e.Message);
+            return BadRequest(ex.Message);
         }
     }
-    
-    [AllowAnonymous]
-    [HttpPost]
-    [Route("login")]
-    public async Task<IActionResult> Login(LoginRequest login)
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] UserDto userLoginDto)
     {
         try
         {
-            var token = await _userService.AuthenticateAsync(login);
-            var response = new { token };
-            return Ok(response);
+            var token = await _userService.AuthenticateAsync(userLoginDto);
+            return Ok(new { token });
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            return BadRequest(e.Message);
+            return Unauthorized(ex.Message);
         }
     }
 }

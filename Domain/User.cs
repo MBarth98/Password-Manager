@@ -2,7 +2,10 @@
 
 namespace Domain;
 
-public class User : IdentityUser
+ public class User
 {
-    public ICollection<Password> Passwords { get; set; }
+    public int Id { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string PasswordHash { get; set; } = string.Empty;
+    public List<PasswordEntry> PasswordEntries { get; set; } = new();
 }

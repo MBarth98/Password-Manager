@@ -1,29 +1,18 @@
 ﻿using Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace Infrastructure;
+namespace Infrastructure.Data;
 
-
-public partial class ApplicationDbContext : IdentityDbContext<User> 
+public class ApplicationDbContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
-    public DbSet<Password> Passwords { get; set; }
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
 
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-    {
-        
-    }
-    
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Data Source=app.db");
+    public DbSet<User> Users { get; set; }
+    public DbSet<PasswordEntry> PasswordEntries { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        OnModelCreatingPartial(modelBuilder);
         base.OnModelCreating(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

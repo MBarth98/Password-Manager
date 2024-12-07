@@ -1,49 +1,28 @@
-﻿using System.Linq.Expressions;
 using Domain;
+using Domain.Interfaces;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class UserRepository(ApplicationDbContext context) : IRepository<User>
+public class UserRepository : IUserRepository
 {
-    public async Task<User> GetByIdAsync(int id)
+    private readonly ApplicationDbContext _context;
+
+    public UserRepository(ApplicationDbContext context)
     {
-        return await context.Users
-            .Include(u => u.Passwords) // Include articles authored by the user
-            .FirstOrDefaultAsync(u => u.Id == id + "") ?? throw new InvalidOperationException();
+        _context = context;
     }
 
-    public async Task<IEnumerable<User>> GetAllAsync()
+    public async Task<User?> GetByEmailAsync(string email)
     {
-        return await context.Users
-            .Include(u => u.Passwords) // Include articles authored by the user
-            .ToListAsync();
+        return await _context.Users.Include(u => u.PasswordEntries)
+                                   .SingleOrDefaultAsync(u => u.Email == email);
     }
 
-    public async Task<IEnumerable<User>> FindAsync(Expression<Func<User, bool>> predicate)
+    public async Task AddAsync(User user)
     {
-        return await context.Users
-            .Include(u => u.Passwords) // Include articles authored by the user
-            .Where(predicate)
-            .ToListAsync();
-    }
-
-    public async Task<User> AddAsync(User entity)
-    {
-        context.Users.Add(entity);
-        await context.SaveChangesAsync();
-        return entity;
-    }
-
-    public void Remove(User entity)
-    {
-        context.Users.Remove(entity);
-        context.SaveChanges();
-    }
-
-    public void Update(User entity)
-    {
-        context.Users.Update(entity);
-        context.SaveChanges();
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
     }
 }
