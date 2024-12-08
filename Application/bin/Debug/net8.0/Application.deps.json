@@ -705,7 +705,6 @@
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Microsoft.EntityFrameworkCore.Proxies": "8.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.10",
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10"
         },
         "runtime": {

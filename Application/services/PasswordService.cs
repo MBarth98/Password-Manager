@@ -27,6 +27,34 @@ namespace Application.Services
             await _passwordRepository.AddPasswordAsync(passwordEntry);
         }
 
+        public async Task DeletePasswordAsync(int passwordId, int userId)
+        {
+            var entry = await _passwordRepository.GetByIdAsync(passwordId);
+            if (entry == null || entry.UserId != userId)
+            {
+                throw new Exception("Password entry not found or not authorized.");
+            }
+
+            await _passwordRepository.DeleteAsync(entry);
+        }
+
+        public async Task UpdatePasswordAsync(int passwordId, int userId, AddPasswordDto updateDto)
+        {
+            var entry = await _passwordRepository.GetByIdAsync(passwordId);
+            if (entry == null || entry.UserId != userId)
+            {
+                throw new Exception("Password entry not found or not authorized.");
+            }
+
+            entry.Website = updateDto.Website;
+            entry.Username = updateDto.Username;
+            entry.Salt = updateDto.Salt;
+            entry.EncryptedPassword = updateDto.EncryptedPassword;
+
+            await _passwordRepository.UpdateAsync(entry);
+        }
+
+
         public async Task<List<PasswordEntry>> GetPasswordsAsync(int userId)
         {
             return await _passwordRepository.GetPasswordsByUserIdAsync(userId);

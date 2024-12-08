@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListPasswordsComponent } from './list-passwords.component';
+import { ListPasswordsComponent } from './password-list.component';
 
 describe('ListPasswordsComponent', () => {
   let component: ListPasswordsComponent;

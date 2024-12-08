@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AddPasswordComponent } from './components/add-password/add-password.component';
-import { ListPasswordsComponent } from './components/list-passwords/list-passwords.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CommonModule } from '@angular/common';
+import { PasswordListComponent } from './components/list-passwords/password-list.component';
 
 @NgModule({
   declarations: [
     AddPasswordComponent,
-    ListPasswordsComponent,
+    PasswordListComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
@@ -20,7 +20,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

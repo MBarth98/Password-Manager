@@ -1,28 +1,48 @@
+import * as CryptoJS from 'crypto-js';
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { PasswordService } from '../../services/password.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  templateUrl: './login.component.html'
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  email = '';
+  masterPassword = '';
+  errorMessage = '';
 
-  constructor(private authService: AuthService, private passwordService: PasswordService, private router: Router) {}
+  // Store the derived encryption key in a service or a global variable
+  constructor(private apiService: ApiService, private router: Router) {}
 
   login() {
-    this.authService.login(this.email, this.password).subscribe({
-      next: () => {
-        this.passwordService.setMasterCredentials(this.email, this.password);
-        this.router.navigate(['/passwords']);
+    this.apiService.login(this.email, this.masterPassword).subscribe({
+      next: (response) => {
+        localStorage.setItem('jwt_token', response.token);
+
+        // Derive a stable master key from email + masterPassword
+        // For example, we use PBKDF2 with the user's email as salt
+        const stableSalt = this.email;
+        const iterations = 10000;
+        const keySize = 256 / 32; // 256-bit key
+
+        // Derive the masterKey used for all password encryption/decryption
+        const masterKey = CryptoJS.PBKDF2(this.email + this.masterPassword, stableSalt, {
+          keySize,
+          iterations
+        }).toString();
+
+        // Store masterKey in memory (e.g., in a global service)
+        this.apiService.setMasterKey(masterKey);
+
+        // Clear masterPassword from memory immediately
+        this.masterPassword = '';
+
+        this.router.navigate(['/home']);
       },
-      error: (err) => {
-        this.errorMessage = 'Login failed. Please check your credentials.';
-      },
+      error: () => {
+        this.errorMessage = 'Login failed.';
+      }
     });
   }
 }

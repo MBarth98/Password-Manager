@@ -16,16 +16,9 @@ internal class Program
         // Add services
         builder.Services.AddControllers();
 
-        // Ensure db.db file exists
-        var runtimeFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        var path = Path.Combine(runtimeFolder, "db.db");
-        if (!File.Exists(path))
-        {
-            File.Create(path).Close();
-        }
-
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+        builder.Services.AddDbContext<ApplicationDbContext>(options => {
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
 
         builder.Services.AddScoped<UserService, UserService>();
         builder.Services.AddScoped<PasswordService, PasswordService>();
@@ -44,16 +37,38 @@ internal class Program
                 ValidateAudience = true,
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                ValidIssuer =  builder.Configuration["JWT_ISSUER"],
-                ValidAudience = builder.Configuration["JWT_AUDIENCE"],
+                ValidIssuer =  "iss",
+                ValidAudience = "aud",
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                     Environment.GetEnvironmentVariable("JWT_SECRET_KEY") 
                     ??  builder.Configuration["JWT_SECRET_KEY"]))
             };
         });
 
+        builder.Services.AddHttpContextAccessor(); // If not already added
+
+        // Add CORS services
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAngularLocalhost",
+                corsBuilder => corsBuilder
+                    .WithOrigins("http://localhost:4200") // Ensure this matches the Angular app URL exactly
+                    .AllowAnyMethod() // Allow all HTTP methods
+                    .AllowAnyHeader() // Allow all headers
+                    .AllowCredentials() // Allow sending credentials (cookies or authorization headers)
+            );
+        });
+
         // Configure app
         var app = builder.Build();
+
+        using (var serviceScope = app.Services.CreateScope())
+        {
+            var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            context.Database.Migrate();
+        }
+
+        app.UseCors("AllowAngularLocalhost"); // Apply CORS policy before authentication
 
         app.UseAuthentication();
         app.UseAuthorization();

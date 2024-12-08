@@ -1,6 +1,6 @@
 <div>
   <h2>Register</h2>
-  <form (submit)="onRegister()">
+  <form (submit)="register()">
     <label>
       Email:
       <input type="email" [(ngModel)]="email" name="email" required />
@@ -16,6 +16,6 @@
       <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
     </label>
     <br />
-    <button type="submit">Register</button>
+    <button type="submit" (click)="register()">Register</button>
   </form>
 </div>

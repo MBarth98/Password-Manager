@@ -1,11 +1,6 @@
-import {inject, Injectable} from '@angular/core';
-import {HttpHandler, HttpHandlerFn, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {AuthService} from '../services/auth.service';
-
+import {HttpHandlerFn, HttpRequest} from '@angular/common/http';
 
 export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
-
-  const authService = inject(AuthService);
 
   const url = req.url;
   // If url is login or register, forward without token
@@ -13,10 +8,8 @@ export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) 
     return next(req);
   }
 
-
-  // Get the token from the AuthService
-  const token = authService.getToken();
-
+  // Get the token from the local-storage
+  const token = localStorage.getItem('jwt_token');
   // Clone the request and set the new header
   if (token) {
     const cloned = req.clone({
