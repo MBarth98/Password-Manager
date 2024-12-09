@@ -18,10 +18,13 @@ This application allows you to securely store your credentials on a single devic
 
 ## Screenshots
 
-(Conceptual Only)
+![login](./screenshots/login.png)
 
-    Login screen: Enter email and master password.
-    Main dashboard: Add, edit, view (show/hide), and delete stored passwords.
+![register](./screenshots/register.png)
+
+![main](./screenshots/home.png)
+
+![json](./screenshots/json.png)
 
 # Security Model discussion
 
